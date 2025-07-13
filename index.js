@@ -14,6 +14,7 @@ const MONGO_URI = process.env.MONGO_URI;
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => res.send("DockStore API Working"));
 app.use("/objects", objectRoutes);
 
 initMongo(MONGO_URI).then(() => {
